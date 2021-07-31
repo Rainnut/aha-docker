@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title></title>
+    <script src="./libs/heytap-appoint-sdk-0.0.1.js"></script>
+    <script src="./libs/preload.js"></script>
+    <% for(var url of htmlWebpackPlugin.files.css) { %>
+    <link href=".<%=url%>" rel="stylesheet">
+    <% } %>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <!-- 修改了路径，不开启自动注入 inject: false -->
+    <% for(var url of htmlWebpackPlugin.files.js) { %>
+    <script type="text/javascript" src=".<%=url%>"></script>
+    <% } %>
+    <script src="./libs/qrcode.js" async></script>
+    <script src="./libs/html2canvas.js" async></script>
+  </body>
+</html>
